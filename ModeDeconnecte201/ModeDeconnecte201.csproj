@@ -133,5 +133,8 @@
   <ItemGroup>
     <None Include="Resources\timetable.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="CabinetMedecin.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
