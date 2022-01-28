@@ -43,5 +43,11 @@ namespace ModeDeconnecte201
             FrmPatient f = new FrmPatient();
             AfficherFenetre(f);
         }
+
+        private void btnConsultation_Click(object sender, EventArgs e)
+        {
+
+            AfficherFenetre(new FrmConsultation());
+        }
     }
 }

@@ -30,12 +30,12 @@ namespace ModeDeconnecte201
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMedecin = new System.Windows.Forms.ToolStripButton();
             this.btnPatient = new System.Windows.Forms.ToolStripButton();
             this.btnConsultation = new System.Windows.Forms.ToolStripButton();
             this.btnRendezVous = new System.Windows.Forms.ToolStripButton();
             this.btnFermer = new System.Windows.Forms.ToolStripButton();
-            this.btnMedecin = new System.Windows.Forms.ToolStripButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,13 +54,16 @@ namespace ModeDeconnecte201
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // panel1
+            // btnMedecin
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 135);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1296, 656);
-            this.panel1.TabIndex = 1;
+            this.btnMedecin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedecin.Image = global::ModeDeconnecte201.Properties.Resources.doctor;
+            this.btnMedecin.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnMedecin.Name = "btnMedecin";
+            this.btnMedecin.Size = new System.Drawing.Size(104, 132);
+            this.btnMedecin.Text = "Medecin";
+            this.btnMedecin.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnMedecin.Click += new System.EventHandler(this.btnMedecin_Click);
             // 
             // btnPatient
             // 
@@ -82,6 +85,7 @@ namespace ModeDeconnecte201
             this.btnConsultation.Size = new System.Drawing.Size(136, 132);
             this.btnConsultation.Text = "Consultation";
             this.btnConsultation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnConsultation.Click += new System.EventHandler(this.btnConsultation_Click);
             // 
             // btnRendezVous
             // 
@@ -104,16 +108,13 @@ namespace ModeDeconnecte201
             this.btnFermer.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
-            // btnMedecin
+            // panel1
             // 
-            this.btnMedecin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMedecin.Image = global::ModeDeconnecte201.Properties.Resources.doctor;
-            this.btnMedecin.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnMedecin.Name = "btnMedecin";
-            this.btnMedecin.Size = new System.Drawing.Size(104, 132);
-            this.btnMedecin.Text = "Medecin";
-            this.btnMedecin.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnMedecin.Click += new System.EventHandler(this.btnMedecin_Click);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 135);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1296, 656);
+            this.panel1.TabIndex = 1;
             // 
             // FrmMenu
             // 
@@ -123,7 +124,7 @@ namespace ModeDeconnecte201
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMenu";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
