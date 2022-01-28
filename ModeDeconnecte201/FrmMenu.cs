@@ -46,7 +46,7 @@ namespace ModeDeconnecte201
 
         private void btnConsultation_Click(object sender, EventArgs e)
         {
-
+            //permet d'afficher la fenetre de la consultation
             AfficherFenetre(new FrmConsultation());
         }
 
