@@ -96,6 +96,7 @@ namespace ModeDeconnecte201
             this.btnRendezVous.Size = new System.Drawing.Size(138, 132);
             this.btnRendezVous.Text = "Rendez-Vous";
             this.btnRendezVous.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnRendezVous.Click += new System.EventHandler(this.btnRendezVous_Click);
             // 
             // btnFermer
             // 

@@ -49,5 +49,11 @@ namespace ModeDeconnecte201
 
             AfficherFenetre(new FrmConsultation());
         }
+
+        private void btnRendezVous_Click(object sender, EventArgs e)
+        {
+            AfficherFenetre(new FrmRendezVous());
+
+        }
     }
 }
