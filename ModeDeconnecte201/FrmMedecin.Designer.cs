@@ -38,6 +38,12 @@ namespace ModeDeconnecte201
             this.btnSuivant = new System.Windows.Forms.Button();
             this.txtRecherche = new System.Windows.Forms.TextBox();
             this.btnRecherche = new System.Windows.Forms.Button();
+            this.bnPrecedent = new System.Windows.Forms.Button();
+            this.btnAjouter = new System.Windows.Forms.Button();
+            this.btnModifier = new System.Windows.Forms.Button();
+            this.btnSupprimer = new System.Windows.Forms.Button();
+            this.btnValider = new System.Windows.Forms.Button();
+            this.btnAnnuler = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,28 +70,28 @@ namespace ModeDeconnecte201
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(446, 129);
+            this.txtNom.Location = new System.Drawing.Point(562, 131);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(249, 30);
             this.txtNom.TabIndex = 4;
             // 
             // txtPrenom
             // 
-            this.txtPrenom.Location = new System.Drawing.Point(446, 166);
+            this.txtPrenom.Location = new System.Drawing.Point(562, 168);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(249, 30);
             this.txtPrenom.TabIndex = 5;
             // 
             // txtTelephone
             // 
-            this.txtTelephone.Location = new System.Drawing.Point(446, 203);
+            this.txtTelephone.Location = new System.Drawing.Point(562, 205);
             this.txtTelephone.Name = "txtTelephone";
             this.txtTelephone.Size = new System.Drawing.Size(249, 30);
             this.txtTelephone.TabIndex = 6;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(446, 250);
+            this.txtEmail.Location = new System.Drawing.Point(562, 241);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(249, 30);
             this.txtEmail.TabIndex = 7;
@@ -117,11 +123,75 @@ namespace ModeDeconnecte201
             this.btnRecherche.UseVisualStyleBackColor = true;
             this.btnRecherche.Click += new System.EventHandler(this.btnRecherche_Click);
             // 
+            // bnPrecedent
+            // 
+            this.bnPrecedent.Location = new System.Drawing.Point(58, 455);
+            this.bnPrecedent.Name = "bnPrecedent";
+            this.bnPrecedent.Size = new System.Drawing.Size(75, 44);
+            this.bnPrecedent.TabIndex = 11;
+            this.bnPrecedent.Text = "<";
+            this.bnPrecedent.UseVisualStyleBackColor = true;
+            this.bnPrecedent.Click += new System.EventHandler(this.bnPrecedent_Click);
+            // 
+            // btnAjouter
+            // 
+            this.btnAjouter.Location = new System.Drawing.Point(446, 309);
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Size = new System.Drawing.Size(105, 44);
+            this.btnAjouter.TabIndex = 12;
+            this.btnAjouter.Text = "Ajouter";
+            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            // 
+            // btnModifier
+            // 
+            this.btnModifier.Location = new System.Drawing.Point(568, 309);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(105, 44);
+            this.btnModifier.TabIndex = 13;
+            this.btnModifier.Text = "Modifier";
+            this.btnModifier.UseVisualStyleBackColor = true;
+            // 
+            // btnSupprimer
+            // 
+            this.btnSupprimer.Location = new System.Drawing.Point(690, 309);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(121, 44);
+            this.btnSupprimer.TabIndex = 14;
+            this.btnSupprimer.Text = "Supprimer";
+            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            // 
+            // btnValider
+            // 
+            this.btnValider.Location = new System.Drawing.Point(510, 359);
+            this.btnValider.Name = "btnValider";
+            this.btnValider.Size = new System.Drawing.Size(105, 44);
+            this.btnValider.TabIndex = 15;
+            this.btnValider.Text = "Valider";
+            this.btnValider.UseVisualStyleBackColor = true;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
+            // 
+            // btnAnnuler
+            // 
+            this.btnAnnuler.Location = new System.Drawing.Point(650, 359);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(105, 44);
+            this.btnAnnuler.TabIndex = 16;
+            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
+            // 
             // FrmMedecin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1659, 1055);
+            this.Controls.Add(this.btnAnnuler);
+            this.Controls.Add(this.btnValider);
+            this.Controls.Add(this.btnSupprimer);
+            this.Controls.Add(this.btnModifier);
+            this.Controls.Add(this.btnAjouter);
+            this.Controls.Add(this.bnPrecedent);
             this.Controls.Add(this.btnRecherche);
             this.Controls.Add(this.txtRecherche);
             this.Controls.Add(this.btnSuivant);
@@ -135,6 +205,7 @@ namespace ModeDeconnecte201
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmMedecin";
             this.Text = "FrmMedecin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMedecin_FormClosing);
             this.Load += new System.EventHandler(this.FrmMedecin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -153,5 +224,11 @@ namespace ModeDeconnecte201
         private System.Windows.Forms.Button btnSuivant;
         private System.Windows.Forms.TextBox txtRecherche;
         private System.Windows.Forms.Button btnRecherche;
+        private System.Windows.Forms.Button bnPrecedent;
+        private System.Windows.Forms.Button btnAjouter;
+        private System.Windows.Forms.Button btnModifier;
+        private System.Windows.Forms.Button btnSupprimer;
+        private System.Windows.Forms.Button btnValider;
+        private System.Windows.Forms.Button btnAnnuler;
     }
 }

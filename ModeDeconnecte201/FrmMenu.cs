@@ -29,7 +29,12 @@ namespace ModeDeconnecte201
 
         private void AfficherFenetre(Form f)
         {
-           
+            if (panel1.Controls.Count > 0)
+            {
+                Form oldForm = (Form)panel1.Controls[0];
+                oldForm.Close();
+            }
+
             panel1.Controls.Clear();
            f.TopLevel = false;
             f.AutoScroll = true;
@@ -53,6 +58,16 @@ namespace ModeDeconnecte201
         private void btnRendezVous_Click(object sender, EventArgs e)
         {
             AfficherFenetre(new FrmRendezVous());
+
+        }
+
+        private void FrmMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (panel1.Controls.Count > 0)
+            {
+                Form oldForm = (Form)panel1.Controls[0];
+                oldForm.Close();
+            }
 
         }
     }

@@ -22,5 +22,16 @@ namespace ModeDeconnecte201.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\sqlexpress2008;Initial Catalog=CabinetMedecin;User ID=sa;Password=P" +
+            "@ssw0rd")]
+        public string CabinetMedecinConnectionString {
+            get {
+                return ((string)(this["CabinetMedecinConnectionString"]));
+            }
+        }
     }
 }
