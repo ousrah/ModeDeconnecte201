@@ -111,7 +111,7 @@ namespace ModeDeconnecte201
             // 
             // txtObservations
             // 
-            this.txtObservations.Location = new System.Drawing.Point(605, 195);
+            this.txtObservations.Location = new System.Drawing.Point(605, 182);
             this.txtObservations.Multiline = true;
             this.txtObservations.Name = "txtObservations";
             this.txtObservations.Size = new System.Drawing.Size(475, 134);

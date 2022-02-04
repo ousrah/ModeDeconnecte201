@@ -13,10 +13,10 @@ namespace ModeDeconnecte201
 {
     public partial class FrmConsultation : Form
     {
-  
+
         BindingSource bsP;
 
-     
+
         BindingSource bsC;
 
 
@@ -35,16 +35,16 @@ namespace ModeDeconnecte201
             lstPatients.DataSource = bsP;
 
 
-     
 
-            bsC = db.remplirListeRelation("consultation",bsP,"id","idPatient");
+
+            bsC = db.remplirListeRelation("consultation", bsP, "id", "idPatient");
 
 
 
             lstConsultations.DisplayMember = "dateConsultation";
             lstConsultations.ValueMember = "id";
             lstConsultations.DataSource = bsC;
-            
+
             txtDC.DataBindings.Add("Text", bsC, "dateConsultation");
             txtObservations.DataBindings.Add("Text", bsC, "observation");
 
@@ -60,8 +60,8 @@ namespace ModeDeconnecte201
         {
             FrmPatient f = new FrmPatient();
             f.ShowDialog();
-         //   ds.Tables["patient"].Clear();
-         //   daP.Fill(ds, "Patient");
+            //   ds.Tables["patient"].Clear();
+            //   daP.Fill(ds, "Patient");
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
@@ -73,7 +73,7 @@ namespace ModeDeconnecte201
         private void btnValider_Click(object sender, EventArgs e)
         {
             bsC.EndEdit();
-          //  daC.Update(ds.Tables["Consultation"]);
+            //  daC.Update(ds.Tables["Consultation"]);
         }
 
         private void txtDC_TextChanged(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace ModeDeconnecte201
             {
                 dtpDateConsultations.Value = Convert.ToDateTime(txtDC.Text);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
             }

@@ -47,7 +47,12 @@ namespace ModeDeconnecte201
             return bs;
 
         }
-        public static void creerTable(string req, string table)
+
+        public static void creerTable(string table)
+        {
+            creerTable("select * from " + table, table);
+        }
+            public static void creerTable(string req, string table)
         {
             ouvrirConnection();
             com.Connection = cn;
@@ -57,15 +62,12 @@ namespace ModeDeconnecte201
 
             if (ds.Tables.Contains(table))
             {
+                ds.EnforceConstraints = false;
                 ds.Tables[table].Clear();
             }
             da.Fill(ds, table);
-
+            ds.EnforceConstraints = true;
         }
-
-       
-
-  
 
         public static BindingSource remplirListeRelation(string table, BindingSource bsP, string pk, string fk)
         {
@@ -89,10 +91,12 @@ namespace ModeDeconnecte201
             DataColumn colFK = ds.Tables[tableF].Columns[fk];
             string nomRelation = "fk_" + tableF + "_" + tableP;
             DataRelation rel = new DataRelation(nomRelation, colPK, colFK);
-            ds.Relations.Add(rel);
+       //     rel.ChildKeyConstraint.DeleteRule = Rule.Cascade;
+       //     rel.ChildKeyConstraint.UpdateRule = Rule.Cascade;
 
-
-        }
+            if (!ds.Relations.Contains(nomRelation))
+                        ds.Relations.Add(rel);
+       }
 
         public static void MiseAjour(string table)
         {
