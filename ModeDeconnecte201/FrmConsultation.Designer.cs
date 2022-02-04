@@ -37,6 +37,9 @@ namespace ModeDeconnecte201
             this.button1 = new System.Windows.Forms.Button();
             this.dtpDateConsultations = new System.Windows.Forms.DateTimePicker();
             this.txtObservations = new System.Windows.Forms.TextBox();
+            this.btnAjouter = new System.Windows.Forms.Button();
+            this.btnValider = new System.Windows.Forms.Button();
+            this.txtDC = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +78,7 @@ namespace ModeDeconnecte201
             // 
             this.btnRecherche.Location = new System.Drawing.Point(215, 87);
             this.btnRecherche.Name = "btnRecherche";
-            this.btnRecherche.Size = new System.Drawing.Size(88, 30);
+            this.btnRecherche.Size = new System.Drawing.Size(123, 30);
             this.btnRecherche.TabIndex = 12;
             this.btnRecherche.Text = "Chercher";
             this.btnRecherche.UseVisualStyleBackColor = true;
@@ -100,18 +103,47 @@ namespace ModeDeconnecte201
             // 
             // dtpDateConsultations
             // 
-            this.dtpDateConsultations.Location = new System.Drawing.Point(671, 125);
+            this.dtpDateConsultations.Location = new System.Drawing.Point(605, 146);
             this.dtpDateConsultations.Name = "dtpDateConsultations";
-            this.dtpDateConsultations.Size = new System.Drawing.Size(352, 30);
+            this.dtpDateConsultations.Size = new System.Drawing.Size(475, 30);
             this.dtpDateConsultations.TabIndex = 14;
+            this.dtpDateConsultations.ValueChanged += new System.EventHandler(this.dtpDateConsultations_ValueChanged);
             // 
             // txtObservations
             // 
-            this.txtObservations.Location = new System.Drawing.Point(630, 195);
+            this.txtObservations.Location = new System.Drawing.Point(605, 195);
             this.txtObservations.Multiline = true;
             this.txtObservations.Name = "txtObservations";
             this.txtObservations.Size = new System.Drawing.Size(475, 134);
             this.txtObservations.TabIndex = 15;
+            // 
+            // btnAjouter
+            // 
+            this.btnAjouter.Location = new System.Drawing.Point(628, 337);
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Size = new System.Drawing.Size(123, 30);
+            this.btnAjouter.TabIndex = 16;
+            this.btnAjouter.Text = "Ajouter";
+            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            // 
+            // btnValider
+            // 
+            this.btnValider.Location = new System.Drawing.Point(707, 384);
+            this.btnValider.Name = "btnValider";
+            this.btnValider.Size = new System.Drawing.Size(123, 30);
+            this.btnValider.TabIndex = 17;
+            this.btnValider.Text = "Valider";
+            this.btnValider.UseVisualStyleBackColor = true;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
+            // 
+            // txtDC
+            // 
+            this.txtDC.Location = new System.Drawing.Point(649, 252);
+            this.txtDC.Name = "txtDC";
+            this.txtDC.Size = new System.Drawing.Size(341, 30);
+            this.txtDC.TabIndex = 18;
+            this.txtDC.TextChanged += new System.EventHandler(this.txtDC_TextChanged);
             // 
             // FrmConsultation
             // 
@@ -119,6 +151,9 @@ namespace ModeDeconnecte201
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1198, 705);
             this.Controls.Add(this.txtObservations);
+            this.Controls.Add(this.txtDC);
+            this.Controls.Add(this.btnValider);
+            this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.dtpDateConsultations);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRecherche);
@@ -147,5 +182,8 @@ namespace ModeDeconnecte201
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dtpDateConsultations;
         private System.Windows.Forms.TextBox txtObservations;
+        private System.Windows.Forms.Button btnAjouter;
+        private System.Windows.Forms.Button btnValider;
+        private System.Windows.Forms.TextBox txtDC;
     }
 }

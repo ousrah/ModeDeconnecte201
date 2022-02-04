@@ -14,13 +14,10 @@ namespace ModeDeconnecte201
     public partial class FrmMedecin : Form
     {
 
-        //private string cs @"data source=.\sqlexpress2008;initial catalog=cabinetMedecin;user id=sa;Password=P@ssw0rd";
-        SqlConnection cn = new SqlConnection();
-        SqlCommand com = new SqlCommand();
-        DataSet ds = new DataSet();
-        SqlDataAdapter da = new SqlDataAdapter();
-        BindingSource bs = new BindingSource();
-        SqlCommandBuilder cb = new SqlCommandBuilder();
+    
+        BindingSource bs;
+
+        
         bool isSaved = true;
         public FrmMedecin()
         {
@@ -30,21 +27,7 @@ namespace ModeDeconnecte201
         private void FrmMedecin_Load(object sender, EventArgs e)
         {
 
-            cn.ConnectionString = ConfigurationManager.ConnectionStrings["CabinetMedecinConnectionString"].ConnectionString;
-            cn.Open();
-            com.Connection = cn;
-            com.CommandText = "select * from medecin";
-
-            da.SelectCommand = com;
-            cb.DataAdapter = da;
-
-
-
-            da.Fill(ds, "Medecin");
-
-            bs.DataSource = ds;
-            bs.DataMember = "Medecin";
-
+            bs = db.remplirListe("medecin");
             lstMedecin.DisplayMember = "nom";
             lstMedecin.ValueMember = "id";
             lstMedecin.DataSource = bs;
@@ -86,6 +69,8 @@ namespace ModeDeconnecte201
         private void btnValider_Click(object sender, EventArgs e)
         {
             bs.EndEdit();
+
+
             isSaved = false;
         }
 
@@ -93,8 +78,8 @@ namespace ModeDeconnecte201
 
         private void FrmMedecin_FormClosing(object sender, FormClosingEventArgs e)
         {
-           if(!isSaved)
-            da.Update(ds.Tables["Medecin"]);
+            if (!isSaved)
+                db.MiseAjour("medecin");
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
